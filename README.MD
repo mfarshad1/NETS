@@ -15,8 +15,8 @@ This repository, alongside the main text, introduces a sparse-sampling workflow 
 1. Discretize configurations into states (choose CVs, bins)  
 2. Generate short trajectories per state (SPS); select lag time \( \delta t \)  
 3. Accumulate transition counts \( C_{ij}(\delta t) \)  
-4. Normalize to \( T \) and obtain \( P \) (right eigenvector, eigenvalue 1)  
-5. Compute \( F = -k_{\mathrm{B}}T \ln P \) and quantify uncertainty (bootstrap)
+4. Normalize to \( T \) and obtain \( P_ss \) (right eigenvector, eigenvalue 1)  
+5. Compute \( F = -k_{\mathrm{B}}T \ln P_ss \) and quantify uncertainty (bootstrap)
 
 ## 📁 Files
 
