@@ -18,6 +18,8 @@ from matplotlib import rc
 rc('xtick', labelsize='16')
 rc('ytick', labelsize='16')
 
+# ----------------- System 2 (Figure 6).
+
 # ---------------- Helpers ----------------
 def load_blocks(filename: str, block_size: int = 60, max_firstcol: float = 60.0) -> np.ndarray:
     """
