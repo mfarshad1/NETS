@@ -29,7 +29,7 @@ from sympy import S, symbols, printing
 # ============================================
 
 
-# ----------------- Analytical force and potential energy solution (Figure 2).
+# ----------------- Analytical force and potential energy solution for system 1(Figure 2).
 energy = [1, 2, 3, 4, 5, 6, 7, 10]
 
 fv = []
