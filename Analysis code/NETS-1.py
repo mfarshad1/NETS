@@ -29,7 +29,7 @@ from sympy import S, symbols, printing
 # ============================================
 
 
-# ----------------- Analytical force and potential energy solution.
+# ----------------- Analytical force and potential energy solution (Figure 2).
 energy = [1, 2, 3, 4, 5, 6, 7, 10]
 
 fv = []
@@ -137,7 +137,7 @@ def make_VW(barrier_kbt: float, num_points: int):
 X2, ww2, VW1sys = make_VW(2.0, 10000)  # 2 kBT
 X3, ww3, VW2sys = make_VW(3.0, 1000)   # 3 kBT
 
-# ---------------- Figure 4 (formerly your first figure block) ----------------
+# ---------------- Figure 3 (formerly your first figure block) ----------------
 position_z = np.linspace(-13, 13, 60)
 Xplot = np.linspace(-13, 13, 1000)
 
@@ -185,14 +185,14 @@ for idx, (ci, lab) in enumerate(zip(colors, labels), start=3):
 
 ax.legend(loc='best', fontsize=18, frameon=False)
 
-pp = PdfPages('Figure 4.pdf')
+pp = PdfPages('Figure 3.pdf')
 plt.tight_layout()
 pp.savefig(fig, bbox_inches='tight')
 pp.close()
 plt.show()
 
 # =========================
-# SPS grids for various counts (Figure 6)
+# SPS grids for various counts (Figure 5)
 # =========================
 F_5, Std_5 = [], []
 F_1, Std_1 = [], []
@@ -212,7 +212,7 @@ for i in range(1, 3 + 1):
     F_8.append(np.loadtxt(f'v{i}_025p_8000sps_freeenergy'))
     Std_8.append(np.loadtxt(f'v{i}_025p_8000sps_std'))
 
-# ---------------- Figure 6 ----------------
+# ---------------- Figure 5 ----------------
 position_z = np.linspace(-13, 13, 60)
 fig, ax = plt.subplots(3, 2, figsize=(10.8, 10))
 fig.subplots_adjust(wspace=0)
@@ -284,13 +284,13 @@ ax[2][0].text(0.05, 0.07, '8000 SPS',  transform=ax[2][0].transAxes, fontsize=16
 ax[2][1].text(0.05, 0.07, '10000 SPS', transform=ax[2][1].transAxes, fontsize=16, fontweight='bold', va='bottom')
 
 plt.subplots_adjust(hspace=0)
-pp = PdfPages('Figure 6.pdf')
+pp = PdfPages('Figure 5.pdf')
 pp.savefig(fig, bbox_inches='tight')
 pp.close()
 plt.show()
 
 # =========================
-# System 2 (simulation time) — Figure 10
+# System 2 (simulation time) — Figure 9
 # =========================
 M1 = np.loadtxt('noneq_large_freeenergy_new'); N1 = np.loadtxt('noneq_large_std')
 A1 = np.loadtxt('noneq_small_freeenergy');     B1 = np.loadtxt('noneq_small_std')
@@ -341,7 +341,7 @@ ax.fill_between(position_2, xv_2_, xc_2_, alpha=0.5, color='black')
 
 ax.set_ylim(1.83, 2.8)
 
-pp = PdfPages('Figure 10.pdf')
+pp = PdfPages('Figure 9.pdf')
 plt.tight_layout()
 pp.savefig(fig, bbox_inches='tight')
 pp.close()
