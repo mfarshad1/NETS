@@ -4,7 +4,7 @@ This repository contains all code and data supporting the paper:
 
 **"Non-equilibrium Trajectory Sampling (NETS) Method for Generating Free-energy Landscapes and Steady-state Distributions"**  
 Mohsen Farshad*, Akwasi Nana Prempeh Ansah-Antwi*, Pedro H. Amorim Valença, Jonathan K. Whitmer  
-*These authors contributed equally.*
+*These authors contributed equally.
 
 ## 🧠 Overview
 
