@@ -1,8 +1,8 @@
-# Non-equilibrium Trajectory Sampling (NETS) method for generating free-energy landscapes and steady-state distributions
+# Non-equilibrium Trajectory Sampling (NETS) Method for Generating Free-energy Landscapes and Steady-state Distributions
 
 This repository contains all code and data supporting the paper:
 
-**"Non-equilibrium Trajectory Sampling (NETS) method for generating free-energy landscapes and steady-state distributions"**  
+**"Non-equilibrium Trajectory Sampling (NETS) Method for Generating Free-energy Landscapes and Steady-state Distributions"**  
 Mohsen Farshad*, Akwasi Nana Prempeh Ansah-Antwi*, Pedro H. Amorim Valença, Jonathan K. Whitmer  
 *These authors contributed equally.*
 
@@ -22,9 +22,11 @@ This repository, alongside the main text, introduces a sparse-sampling workflow 
 
 | File | Description |
 |------|-------------|
-| `Analysis code/NETS1.py` | Produces Figures **2**, **3**, **5**, **9** (NETS analysis). |
+| `Analysis code/NETS-1.py` | Produces Figures **2**, **3**, **5**, **9** (NETS analysis). |
+| `Analysis code/data-NETS-1.zip` | **Data for `NETS-1.py`** (ready-to-run dataset for Figures 2, 3, 5, 9). |
 | `Analysis code/BF.py` | Produces Figure **6** (brute-force baseline, non-equilibrium). |
-| `Analysis code/NETS2.py` | Produces Figures **7** and **8** (additional NETS analysis). |
+| `Analysis code/NETS-2.py` | Produces Figures **7** and **8** (additional NETS analysis). |
 | `LAMMPS code/system1-NETS.in` | **System 1 (equilibrium):** example input for NETS short-trajectory simulations. |
 | `LAMMPS code/system2-NETS.in` | **System 2 (non-equilibrium):** example input for NETS short-trajectory simulations. |
-| `LAMMPS code/system2-BF.in` | **System 2 (non-equilibrium):** example input for brute-force long simulations. |
+| `LAMMPS code/system2-BF.in` | **System 2 (non-equilibrium):** brute-force long simulation input. **Use this to reproduce data for `BF.py` and `NETS-2.py`.** |
+
