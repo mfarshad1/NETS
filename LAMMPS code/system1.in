@@ -1,0 +1,28 @@
+variable                        epsilon                            equal       1
+variable                        sigma                              equal       1
+variable                        dt                                 equal    1.0e-4*${sigma}*(1/${epsilon})^0.5
+variable                        num_particle                       equal      1 
+variable                       box_length                          equal    15
+variable                       ext_temp                            equal      1 
+variable                       dump_T                              equal       100*${dt} #obtained from 100*dt
+variable                       my_force                              atom  ((z>-6)*(z<-5)*-5+((z>5)*(z<6)*5))+0.1
+
+############################# Initialization######################################################################
+units                         lj
+dimension                      3
+boundary                      p p f
+atom_style                  atomic
+read_data                     ${test1}
+########################  Force Parameters############################################################################
+pair_style               zero 2.5 nocoeff
+pair_coeff                 * * 
+
+fix                          mywall all wall/reflect zlo -13 zhi 13 units box
+ 
+fix                           200 all   addforce 0  0 v_my_force   
+
+fix                          ener all nve
+fix                          thermo all langevin ${ext_temp} ${ext_temp} 1 ${seed}
+timestep                     ${dt}
+dump                         1 all custom 10000  final.${test1} id type  x y z  
+run                         2500000
