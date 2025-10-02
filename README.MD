@@ -8,7 +8,7 @@ Mohsen Farshad*, Akwasi Nana Prempeh Ansah-Antwi*, Pedro H. Amorim Valença, Jon
 
 ## 🧠 Overview
 
-This repository, alongside the main text, introduces a sparse-sampling workflow to reconstruct **steady-state distributions** and **effective free-energy landscapes** from short trajectory segments. We build transition counts \( C_{ij} \) at lag \( \delta t \), normalize to a column-stochastic matrix \( T_{ij} = C_{ij}/\sum_k C_{kj} \), obtain \( P \) as the right eigenvector of \( T \), and compute \( F(i) = -k_{\mathrm{B}}T \ln P(i) \). The workflow supports both equilibrium and non-equilibrium steady states.
+This repository, alongside the main text, introduces a sparse-sampling workflow to reconstruct **steady-state distributions** and **effective free-energy landscapes** from short trajectory segments. We build transition counts \( C_{ij} \) at lag \( \delta t \), normalize to a column-stochastic matrix \( T_{ij} = C_{ij}/\sum_k C_{kj} \), obtain \( P_ss \) as the right eigenvector of \( T \), and compute \( F(i) = -k_{\mathrm{B}}T \ln P_ss(i) \). The workflow supports both equilibrium and non-equilibrium steady states.
 
 ### 📈 Method Flow:
 
