@@ -11,7 +11,7 @@ import matplotlib.ticker as ticker
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 from matplotlib.backends.backend_pdf import PdfPages
 
-# -----------------System 2 (Figure 7 and 8).
+# ----------------- System 2 (Figure 7 and 8).
 
 # Plotting Setup
 formatter = ticker.ScalarFormatter(useMathText=True)
