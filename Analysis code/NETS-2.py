@@ -11,6 +11,8 @@ import matplotlib.ticker as ticker
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 from matplotlib.backends.backend_pdf import PdfPages
 
+#-----Figures 7 and 8--------
+
 # Plotting Setup
 formatter = ticker.ScalarFormatter(useMathText=True)
 formatter.set_scientific(True)
@@ -191,7 +193,7 @@ if __name__ == "__main__":
         # plot_results_updated() will be extended and replaced with new composite plot later
 
         # Plot 1: Side-by-side Transition Matrices
-        pp = PdfPages("Heat_map.pdf")
+        pp = PdfPages("Figure 7.pdf")
         fig, axes = plt.subplots(1, 2, figsize=(14, 5)) 
         plt.subplots_adjust(wspace=0.2)  # horizontal space between the two subplots
         for ax, T, label in zip(axes, [T_large, T_small], ["Large", "Small"]):
@@ -217,7 +219,7 @@ if __name__ == "__main__":
         mean_large, low_large, high_large = bootstrap_steady_state_CI(transitions_large, num_bins)
         mean_small, low_small, high_small = bootstrap_steady_state_CI(transitions_small, num_bins)
 
-        pp = PdfPages("Probability_Free_Energy.pdf")
+        pp = PdfPages("Figure 8.pdf")
         fig, axes = plt.subplots(2, 1, figsize=(8, 8))
 
         axes[0].axvspan(-5, -4, color='red', alpha=1.0)
