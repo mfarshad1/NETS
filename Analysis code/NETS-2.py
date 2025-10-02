@@ -22,7 +22,7 @@ rc('axes', labelsize=28)
 rc('xtick', labelsize=24)
 rc('ytick', labelsize=24)
 
-# ----------------- System 2 (Figure 7 and 8).
+# ----------------- System 2 (Figures 7 and 8).
 
 # Parameters
 num_bins = 60
