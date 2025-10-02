@@ -11,8 +11,6 @@ import matplotlib.ticker as ticker
 from mpl_toolkits.axes_grid1 import make_axes_locatable
 from matplotlib.backends.backend_pdf import PdfPages
 
-# ----------------- System 2 (Figure 7 and 8).
-
 # Plotting Setup
 formatter = ticker.ScalarFormatter(useMathText=True)
 formatter.set_scientific(True)
@@ -23,6 +21,8 @@ rc('font', **{'family': 'serif', 'serif': ['Computer Modern Roman']})
 rc('axes', labelsize=28)
 rc('xtick', labelsize=24)
 rc('ytick', labelsize=24)
+
+# ----------------- System 2 (Figure 7 and 8).
 
 # Parameters
 num_bins = 60
