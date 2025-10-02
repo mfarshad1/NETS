@@ -1,0 +1,59 @@
+# sample LAMMPS input script for thermal conductivity of liquid LJ
+# use fix ehex to add/subtract energy from 2 regions
+
+# settings
+
+variable        t equal 0.74
+variable        rc equal 3.0
+
+# setup problem
+units           lj
+dimension        3
+atom_style      atomic 
+boundary        p p  p
+read_data                     ${test1}
+
+
+# Define potential
+pair_style      lj/cut ${rc}
+pair_coeff      1 1 1.0 1.0 
+pair_coeff      2 2 1.0 1.0 
+pair_coeff      1 2 1.0 1.0 
+
+#fix             mywall all wall/reflect ylo -10.58 yhi 10.58 units box
+# Define groups and initial velocities
+#group           small type 1
+#group           large type 1001
+
+
+# Set up simulation
+neighbor        0.3 bin
+neigh_modify    delay 5
+timestep        0.001
+
+# Define regions and compute temperature
+region          hot block INF INF -5.0 -4.0 INF INF
+region          cold block  INF INF 4.0 5.0 INF INF
+
+#minimize        1e-6 1e-4 10000 10000000
+
+#production run
+
+
+fix             hot all ehex 1 35.0 region hot
+fix             cold all ehex 1 -35.0 region cold
+fix             4 all nve
+
+#group           myparticle_small id 1
+group           myparticle_large id 1001
+
+#dump            dump_pe_small_single myparticle_small custom 100 final_small.${test1} id x y z vx vy vz
+#dump_modify     dump_pe_small_single flush yes pbc yes
+
+dump            dump_pe_large_single myparticle_large custom 100 final_large.${test1} id x y z vx vy vz
+dump_modify     dump_pe_large_single flush yes pbc yes
+
+
+
+timestep        0.001
+run             192000
